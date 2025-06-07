@@ -1,5 +1,5 @@
 const fs = require('fs');
-const https = require('https');
+const http = require('http');
 const WebSocket = require('ws');
 const mysql = require('mysql');
 const url = require('url');
@@ -9,10 +9,7 @@ const handlePlaceBet = require('./handlers/place_bet');
 const handlePlaceMultiBet = require('./handlers/place_multi_bet');
 const handleClearBets = require('./handlers/delete_bet');
 // SSL সার্টিফিকেট
-const server = https.createServer({
-	cert: fs.readFileSync('/etc/letsencrypt/live/jeeto.site/fullchain.pem'),
-	key: fs.readFileSync('/etc/letsencrypt/live/jeeto.site/privkey.pem')
-});
+const server = https.createServer();
 // MySQL সংযোগ
 const db = mysql.createConnection({
 	host: 'localhost',

@@ -9,7 +9,7 @@ const handlePlaceBet = require('./handlers/place_bet');
 const handlePlaceMultiBet = require('./handlers/place_multi_bet');
 const handleClearBets = require('./handlers/delete_bet');
 // SSL সার্টিফিকেট
-const server = https.createServer();
+const server = http.createServer();
 // MySQL সংযোগ
 const db = mysql.createConnection({
 	host: 'localhost',
